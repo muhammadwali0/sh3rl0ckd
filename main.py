@@ -15,7 +15,6 @@ def print_logo():
     {RESET}""")
 
 def main():
-    print_logo()  # Pehle logo print hoga jab program run hoga
     print("\033[92mWelcome to sh3rl0ckd - Information Gathering Toolkit v1.1\033[0m\n")
 
 def main_menu():
