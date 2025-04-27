@@ -1,5 +1,6 @@
 # Import modules
 from modules.dns_analysis import domain_to_ip
+from modules.live_host_identification import ping_sweep
 import sys
 
 # Colors
@@ -22,12 +23,15 @@ def main_menu():
         try:
             print(f"\n{GREEN}Select an option:{RESET}")
             print("1. DNS Analysis")
+            print("2. Live Host Identification")
             print("0. Exit\n")
 
             choice = input("Enter your choice: ").strip()
 
             if choice == '1':
                 domain_to_ip()
+            elif choice == '2':
+                ping_sweep()
             elif choice == '0':
                 print("\nExiting... Goodbye!\n")
                 sys.exit(0)
@@ -35,7 +39,7 @@ def main_menu():
                 print("\nInvalid option. Please try again.\n")
 
         except KeyboardInterrupt:
-            print()  # silent Ctrl+C exit
+            print()  # Silent Ctrl+C exit
             sys.exit(0)
 
 if __name__ == '__main__':
