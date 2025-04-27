@@ -2,6 +2,7 @@
 from modules.dns_analysis import domain_to_ip
 from modules.live_host_identification import ping_sweep
 import sys
+import os
 
 # Colors
 GREEN = "\033[38;5;46m"
@@ -17,6 +18,10 @@ def print_logo():
 
 sh3rl0ckd - Reconnaissance Toolkit v1.1
 {RESET}""")
+
+if os.geteuid() != 0:
+    print("This script must be run as root. Please use 'sudo'.")
+    sys.exit(1)
 
 def main_menu():
     while True:
